@@ -1,8 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useCallback } from 'react';
 
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+
+import HomeScreen from './screens/Home';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -22,24 +24,8 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={styles.title}>
-        ATTENTION VOTEUUUH
-      </Text>
-    </View>
+  <View onLayout={onLayoutRootView}>
+    <HomeScreen />
+  </View>
   );
 }
-
-const styles = StyleSheet.create({
-  title: {
-    fontFamily: 'Ka-Blam',
-    fontSize: 30,
-    letterSpacing: 2,
-  },
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
